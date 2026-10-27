@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
   retries: 0,
   use: {
     trace: 'on',
-    channel: 'msedge',
+    channel: process.env.CI ? undefined : 'msedge',
     locale: 'pt-BR',
     headless: true,
     viewport: { width: 1280, height: 720 },
